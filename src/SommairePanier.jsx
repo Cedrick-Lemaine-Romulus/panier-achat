@@ -54,4 +54,5 @@ function retournerInfoPanier(pan) {
     info.total = (sousTotal + tps + tvq).toFixed(2);
 
     return info;
+    
 }
