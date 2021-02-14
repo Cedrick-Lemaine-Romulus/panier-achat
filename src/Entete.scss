@@ -1,0 +1,38 @@
+  
+.Entete {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 60px;
+    margin: 0px;
+    padding: 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    ul {
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      font-size: 0.8em;
+      li {
+        cursor: pointer;
+      }
+      li:not(:last-of-type) {
+        padding-right: 15px;
+        border-right: 1px solid white;
+      }
+      li:not(:first-of-type) {
+        padding-left: 15px;
+      }
+      &.navPrincipale {
+        margin-left: 50px;
+        margin-right: 20px;
+      }
+      &.navUtil {
+          margin-left: auto;
+      }
+    }
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "prd0001",
+        "nom": "T-Shirt à col rond",
+        "prix": 10.99
+    },
+    {
+        "id": "prd0002",
+        "nom": "T-Shirt en col V",
+        "prix": 12.95
+    },
+    {
+        "id": "prd0003",
+        "nom": "Un autre T-Shirt",
+        "prix": 14.50
+    },
+    {
+        "id": "prd0004",
+        "nom": "Chandail pour femme",
+        "prix": 17.75
+    },
+    {
+        "id": "prd0005",
+        "nom": "Chandail à manche longue",
+        "prix": 24.95
+    },
+    {
+        "id": "prd0006",
+        "nom": "G-pull le temps",
+        "prix": 10.95
+    }
+]
