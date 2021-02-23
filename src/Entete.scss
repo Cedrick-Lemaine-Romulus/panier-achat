@@ -11,6 +11,12 @@
     background-color: black;
     display: flex;
     align-items: center;
+
+    a, a:link, a:active, a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
     ul {
       margin: 10px 0 0 0;
       padding: 0;

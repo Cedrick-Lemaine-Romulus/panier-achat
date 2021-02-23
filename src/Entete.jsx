@@ -3,6 +3,8 @@ import ShoppingCartIcons from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import SommairePanier from './SommairePanier';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 export default function Entete(props) {
     // const etatCacherSommairePanier = useState(true);
@@ -11,13 +13,14 @@ export default function Entete(props) {
 
     // const valeurEtatCacher = etatCacherSommairePanier[0];
 
-        // Avec la décomposition de tableau, c'est plus facile :
+    // Avec la décomposition de tableau, c'est plus facile :
     const [cacheSommaire, setCacheSommaire] = useState(true);
     
-    const basculerSommairePanier = () => setCacheSommaire(cacheSommaire ? false : true);
+    // const basculerSommairePanier = () => setCacheSommaire(cacheSommaire ? false : true);
+    const basculerSommairePanier =  () => setCacheSommaire(!cacheSommaire);
 
     // Accéder à l'état du panier qui est reçu dans les props
-    const [panier, setPanier] = props.etatPanier; // Décomposition de tableaux (et d'objets)
+    const [panier] = props.etatPanier; // Décomposition de tableaux (et d'objets)
     
     // Calculer le nombre d'articles total du panier
     // Méthode 1 : programmation impérative (moins expressive)
@@ -41,15 +44,15 @@ export default function Entete(props) {
 
     return (
         <header className="Entete">
-            <div>Logo</div>
+            <div><Link to="/">Logo</Link></div>
             <ul className="navPrincipale">
-                <li>Produits</li>
-                <li>À propos de nous</li>
-                <li>Contactez-nous</li>
+                <li><Link to="/nos-produits">Produits</Link></li>
+                <li><Link to="/a-propos-de-magasin">À propos de nous</Link></li>
+                <li><Link to="/contact">Contactez-nous</Link></li>
             </ul>
             <ul className="navUtil">
                 <li>
-                    <Badge onClick={basculerSommairePanier}  badgeContent={Object.values(panier).reduce( (accumulateur, eltCourant) =>accumulateur + eltCourant.qte, 0)} color="primary">
+                    <Badge onClick={basculerSommairePanier}  badgeContent={Object.values(panier).reduce( (accumulateur, eltCourant) => accumulateur + eltCourant.qte, 0)} color="primary">
                         <ShoppingCartIcons />
                     </Badge>
                     <SommairePanier cacher={cacheSommaire} etatPanier={props.etatPanier} />
